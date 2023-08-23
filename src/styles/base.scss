@@ -30,6 +30,11 @@
 			margin-right: 15px;
 		}
 
+		&:disabled {
+			pointer-events: none;
+			cursor: default;
+		}
+
 		&::before,
 		&::after {
 			content: '';
