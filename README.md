@@ -1,13 +1,13 @@
 <div align="center">
 <br>
 <h1>tickbox</h1>
-<p>Checkbox, radio, switch</p>
+<p>checkbox, radio, switch</p>
 
 [![npm](https://img.shields.io/npm/v/tickbox.svg?colorB=brightgreen)](https://www.npmjs.com/package/tickbox)
 [![GitHub package version](https://img.shields.io/github/package-json/v/ux-ui-pro/tickbox.svg)](https://github.com/ux-ui-pro/tickbox)
 [![NPM Downloads](https://img.shields.io/npm/dm/tickbox.svg?style=flat)](https://www.npmjs.org/package/tickbox)
 
-<p><sup>600B gzipped</sup></p>
+<p><sup>500B gzipped</sup></p>
 <h3><a href="https://codepen.io/ux-ui/full/XWoJvpg">Demo</a></h3>
 </div>
 <br>
@@ -25,17 +25,18 @@ import Tickbox from 'tickbox'
 ```
 <sub>**CSS**</sub>
 ```css
-@import "tickbox/dist/style.css";
+@import "tickbox/dist/index.css;
 ```
 <sub>or **SCSS** if your bundler supports SCSS</sub>
 ```css
-@import "tickbox/src/scss";
+@import "tickbox/src";
 ```
 <br>
 
 ## Use
-<sub>**HTML**</sub>
+<sub>**HTML** <a href="https://codepen.io/ux-ui/full/XWoJvpg">more examples</a></sub>
 ```html
+// Checkbox
 <div class="tickbox">
 	<input id="one" type="checkbox">
 	<label for="one">
@@ -43,6 +44,7 @@ import Tickbox from 'tickbox'
 	</label>
 </div>
 
+// Radio
 <div class="tickbox">
 	<input id="two" type="radio">
 	<label for="two">
@@ -50,6 +52,7 @@ import Tickbox from 'tickbox'
 	</label>
 </div>
 
+// Switch checkbox
 <div class="tickbox">
 	<input id="three" type="checkbox" role="switch">
 	<label for="three">
@@ -57,6 +60,7 @@ import Tickbox from 'tickbox'
 	</label>
 </div>
 
+// Switch radio
 <div class="tickbox">
 	<input id="four" type="radio" role="switch">
 	<label for="four">
