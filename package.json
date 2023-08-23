@@ -1,0 +1,53 @@
+{
+  "name": "tickbox",
+  "version": "0.0.1-alpha.1",
+  "description": "Checkbox, radio, switch",
+  "author": "ux-ui.pro",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ux-ui-pro/tickbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ux-ui-pro/tickbox/issues"
+  },
+  "main": "dist/index.js",
+  "css": "dist/index.css",
+  "module": "dist/index.module.js",
+  "targets": {
+    "main": {
+      "source": "src/index.js"
+    },
+    "module": {
+      "source": "src/index.js"
+    },
+    "css": {
+      "source": "src/index.scss"
+    }
+  },
+  "scripts": {
+    "serve": "parcel watch",
+    "build": "parcel build",
+    "clean": "rm -rf dist .parcel-cache"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "~2.9.3",
+    "parcel": "~2.9.3"
+  },
+  "keywords": [
+    "radio",
+    "checkbox",
+    "switch",
+    "toggle",
+    "kit",
+    "material",
+    "ui",
+    "css",
+    "scss",
+    "disabled",
+    "component",
+    "interface",
+    "mobile",
+    "desktop"
+  ]
+}

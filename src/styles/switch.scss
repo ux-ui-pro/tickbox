@@ -1,0 +1,49 @@
+.tickbox {
+	input[role=switch] {
+		width: 55px;
+		min-width: 55px;
+
+		&::before,
+		&::after {
+			--tickbox-switch: var(--tickbox-color-inactive);
+
+			border-color: var(--tickbox-switch);
+			transition: border-color 90ms ease, background-color 90ms ease, transform 90ms ease;
+		}
+
+		&::before {
+			width: 10px; height: 10px;
+			border-radius: 10px;
+			background-color: var(--tickbox-switch);
+			transform: translateX(-6px);
+		}
+
+		&::after {
+			--tickbox-switch: var(--tickbox-color-inactive);
+
+			width: 36px; height: 24px;
+			border-radius: 24px;
+			background-color: transparent;
+			border-width: 2px;
+			border-style: solid;
+		}
+
+		&:checked {
+			&::before,
+			&::after {
+				--tickbox-switch: var(--tickbox-color-active);
+			}
+
+			&::before {
+				transform: translateX(6px) scale(1.4);
+			}
+		}
+
+		&:disabled {
+			&::before,
+			&::after {
+				--tickbox-switch: var(--tickbox-color-disabled);
+			}
+		}
+	}
+}
