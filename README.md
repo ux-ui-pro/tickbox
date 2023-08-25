@@ -25,9 +25,9 @@ import Tickbox from 'tickbox'
 ```
 <sub>**CSS**</sub>
 ```css
-@import "tickbox/dist/index.css;
+@import "tickbox/dist";
 ```
-<sub>or **SCSS** if your bundler supports SCSS</sub>
+<sub>or source if your bundler supports **SCSS**</sub>
 ```css
 @import "tickbox/src";
 ```
