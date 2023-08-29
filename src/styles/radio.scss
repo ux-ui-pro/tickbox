@@ -9,7 +9,7 @@
 
 		&::before {
 			background-color: var(--tickbox-radio);
-			border-radius: 10px;
+			border-radius: var(--tickbox-radio-mark-radius, 10px);
 			width: 10px; height: 10px;
 			transform: scale(0);
 		}
@@ -17,7 +17,7 @@
 		&::after {
 			border-width: var(--tickbox-border-width, 2px);
 			border-style: solid;
-			border-color: var(--tickbox-radio);
+			border-color: var(--tickbox-radio-border-radius, 20px);
 			border-radius: 20px;
 			width: 20px; height: 20px;
 		}
