@@ -94,6 +94,14 @@ import Tickbox from 'tickbox'
 --tickbox-disabled-font-color
 
 --tickbox-border-width
+
+--tickbox-checkbox-radius
+
+--tickbox-radio-border-radius
+--tickbox-radio-mark-radius
+
+--tickbox-switch-border-radius
+--tickbox-switch-mark-radius
 ```
 <br>
 
