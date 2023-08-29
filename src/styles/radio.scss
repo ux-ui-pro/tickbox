@@ -15,7 +15,7 @@
 		}
 
 		&::after {
-			border-width: 2px;
+			border-width: var(--tickbox-border-width, 2px);
 			border-style: solid;
 			border-color: var(--tickbox-radio);
 			border-radius: 20px;
