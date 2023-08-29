@@ -92,6 +92,8 @@ import Tickbox from 'tickbox'
 --tickbox-label-font-color
 --tickbox-desc-font-color
 --tickbox-disabled-font-color
+
+--tickbox-border-width
 ```
 <br>
 
