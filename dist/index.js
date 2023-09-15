@@ -9,30 +9,31 @@ $parcel$defineInteropFlag(module.exports);
 
 $parcel$export(module.exports, "default", () => $4fa36e821943b400$export$2e2bcd8739ae039);
 class $4fa36e821943b400$var$Tickbox {
-    constructor(){
-        this.tickboxElements = document.querySelectorAll(".tickbox");
-        this.tickboxElements.forEach((element)=>{
-            const checkboxes = element.querySelectorAll('input[type="checkbox"]');
-            const radios = element.querySelectorAll('input[type="radio"]');
-            this.addAriaCheckedAttribute([
+    static init() {
+        const tickboxElements = document.querySelectorAll(".tickbox");
+        if (tickboxElements.length === 0) return;
+        tickboxElements.forEach((element)=>{
+            const checkboxes = Array.from(element.querySelectorAll('input[type="checkbox"]'));
+            const radios = Array.from(element.querySelectorAll('input[type="radio"]'));
+            $4fa36e821943b400$var$Tickbox.addAriaCheckedAttribute([
                 ...checkboxes,
                 ...radios
             ]);
             element.addEventListener("click", (event)=>{
                 const target = event.target;
-                if (target.type === "checkbox" || target.type === "radio") this.tickboxAriaCheckedAttribute(target);
+                if (target.type === "checkbox" || target.type === "radio") $4fa36e821943b400$var$Tickbox.tickboxAriaCheckedAttribute(target);
             });
         });
     }
-    addAriaCheckedAttribute(inputs) {
-        inputs.forEach((input)=>{
+    static addAriaCheckedAttribute(inputs) {
+        inputs.map((input)=>{
             input.setAttribute("aria-checked", input.checked);
         });
     }
-    tickboxAriaCheckedAttribute(input) {
+    static tickboxAriaCheckedAttribute(input) {
         const groupName = input.getAttribute("name");
         if (groupName) {
-            const groupInputs = document.querySelectorAll(`input[name="${groupName}"]`);
+            const groupInputs = Array.from(document.querySelectorAll(`input[name="${groupName}"]`));
             groupInputs.forEach((groupInput)=>{
                 groupInput.setAttribute("aria-checked", groupInput === input);
             });

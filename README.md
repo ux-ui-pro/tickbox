@@ -7,8 +7,8 @@
 [![GitHub package version](https://img.shields.io/github/package-json/v/ux-ui-pro/tickbox.svg)](https://github.com/ux-ui-pro/tickbox)
 [![NPM Downloads](https://img.shields.io/npm/dm/tickbox.svg?style=flat)](https://www.npmjs.org/package/tickbox)
 
-<p><sup>500B gzipped</sup></p>
-<h3><a href="https://codepen.io/ux-ui/full/XWoJvpg">Demo</a></h3>
+<p><sup>600B gzipped</sup></p>
+<h3><a href="https://52kty3.csb.app/">Demo</a></h3>
 </div>
 <br>
 
@@ -19,7 +19,7 @@ $ yarn add tickbox
 <br>
 
 ## Import
-<sub>**JS** (optional) adds aria-checked attribute indicates the current "checked" state of checkboxes, radio buttons, and other switches</sub>
+<sub>**JS** (optional) adds aria-checked attribute indicates the current "checked" state of checkboxes, radio buttons and switches</sub>
 ```javascript
 import Tickbox from 'tickbox'
 ```
@@ -34,7 +34,11 @@ import Tickbox from 'tickbox'
 <br>
 
 ## Use
-<sub>**HTML** <a href="https://codepen.io/ux-ui/full/XWoJvpg">more examples</a></sub>
+<sub>**JS** (optional)</sub>
+```javascript
+Tickbox.init()
+```
+<sub>**HTML** <a href="https://52kty3.csb.app/">more examples</a></sub>
 ```html
 // Checkbox
 <div class="tickbox">
@@ -80,9 +84,16 @@ import Tickbox from 'tickbox'
 --tickbox-color-inactive-l
 --tickbox-color-inactive-a
 
+--tickbox-color-active
+--tickbox-color-inactive
+--tickbox-color-disabled
+
 --tickbox-color-active-highlight
 --tickbox-color-inactive-highlight
---tickbox-color-disabled
+
+--tickbox-switch-color-inactive
+--tickbox-switch-color-active
+--tickbox-switch-color-disabled
 
 --tickbox-transition-duration
 --tickbox-transition-timing
@@ -92,6 +103,10 @@ import Tickbox from 'tickbox'
 --tickbox-label-font-color
 --tickbox-desc-font-color
 --tickbox-disabled-font-color
+
+
+--tickbox-label-font-weight
+--tickbox-desc-font-weight
 
 --tickbox-border-width
 

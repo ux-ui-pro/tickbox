@@ -1,6 +1,6 @@
 {
   "name": "tickbox",
-  "version": "0.0.1-alpha.5",
+  "version": "0.0.1-alpha.9",
   "description": "Checkbox, radio, switch",
   "author": "ux-ui.pro",
   "license": "MIT",
@@ -28,10 +28,12 @@
   "scripts": {
     "serve": "parcel watch",
     "build": "parcel build",
-    "clean": "rm -rf dist .parcel-cache"
+    "clean": "rm -rf dist .parcel-cache",
+    "lint": "eslint --ext .js --report-unused-disable-directives ."
   },
   "devDependencies": {
     "@parcel/transformer-sass": "~2.9.3",
+    "eslint": "^8.49.0",
     "parcel": "~2.9.3"
   },
   "keywords": [

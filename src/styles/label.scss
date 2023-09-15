@@ -6,7 +6,7 @@
 		justify-content: center;
 		overflow: hidden;
 		max-width: 100%;
-		font-weight: 400;
+		font-weight: var(--tickbox-label-font-weight, 400);
 		line-height: 150%;
 		font-size: var(--tickbox-label-font-size);
 		color: var(--tickbox-label-font-color);
@@ -31,6 +31,7 @@
 			line-height: 125%;
 			font-size: var(--tickbox-desc-font-size);
 			color: var(--tickbox-desc-font-color);
+			font-weight: var(--tickbox-desc-font-weight, 400);
 		}
 	}
 
