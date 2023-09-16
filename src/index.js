@@ -1,53 +1,55 @@
 class Tickbox {
-	static init() {
-		const tickboxElements = document.querySelectorAll(".tickbox");
+  static init() {
+    const tickboxElements = document.querySelectorAll('.tickbox');
 
-		if (tickboxElements.length === 0) {
-			return;
-		}
+    if (tickboxElements.length === 0) {
+      return;
+    }
 
-		tickboxElements.forEach((element) => {
-			const checkboxes = Array.from(
-				element.querySelectorAll('input[type="checkbox"]')
-			);
+    tickboxElements.forEach((element) => {
+      const checkboxes = Array.from(
+        element.querySelectorAll('input[type="checkbox"]'),
+      );
 
-			const radios = Array.from(
-				element.querySelectorAll('input[type="radio"]')
-			);
+      const radios = Array.from(
+        element.querySelectorAll('input[type="radio"]'),
+      );
 
-			Tickbox.addAriaCheckedAttribute([...checkboxes, ...radios]);
+      Tickbox.addAriaCheckedAttribute([...checkboxes, ...radios]);
 
-			element.addEventListener("click", (event) => {
-				const target = event.target;
+      element.addEventListener('click', (event) => {
+        const { target } = event;
 
-				if (target.type === "checkbox" || target.type === "radio") {
-					Tickbox.tickboxAriaCheckedAttribute(target);
-				}
-			});
-		});
-	}
+        if (target.type === 'checkbox' || target.type === 'radio') {
+          Tickbox.tickboxAriaCheckedAttribute(target);
+        }
+      });
+    });
+  }
 
-	static addAriaCheckedAttribute(inputs) {
-		inputs.map((input) => {
-			input.setAttribute("aria-checked", input.checked);
-		});
-	}
+  static addAriaCheckedAttribute(inputs) {
+    inputs.map((input) => {
+      input.setAttribute('aria-checked', input.checked);
 
-	static tickboxAriaCheckedAttribute(input) {
-		const groupName = input.getAttribute("name");
+      return input;
+    });
+  }
 
-		if (groupName) {
-			const groupInputs = Array.from(
-				document.querySelectorAll(`input[name="${groupName}"]`)
-			);
+  static tickboxAriaCheckedAttribute(input) {
+    const groupName = input.getAttribute('name');
 
-			groupInputs.forEach((groupInput) => {
-				groupInput.setAttribute("aria-checked", groupInput === input);
-			});
-		} else {
-			input.setAttribute("aria-checked", input.checked);
-		}
-	}
+    if (groupName) {
+      const groupInputs = Array.from(
+        document.querySelectorAll(`input[name="${groupName}"]`),
+      );
+
+      groupInputs.forEach((groupInput) => {
+        groupInput.setAttribute('aria-checked', groupInput === input);
+      });
+    } else {
+      input.setAttribute('aria-checked', input.checked);
+    }
+  }
 }
 
 export default Tickbox;

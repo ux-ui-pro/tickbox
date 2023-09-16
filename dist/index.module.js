@@ -10,7 +10,7 @@ class $cf838c15c8b009ba$var$Tickbox {
                 ...radios
             ]);
             element.addEventListener("click", (event)=>{
-                const target = event.target;
+                const { target: target } = event;
                 if (target.type === "checkbox" || target.type === "radio") $cf838c15c8b009ba$var$Tickbox.tickboxAriaCheckedAttribute(target);
             });
         });
@@ -18,6 +18,7 @@ class $cf838c15c8b009ba$var$Tickbox {
     static addAriaCheckedAttribute(inputs) {
         inputs.map((input)=>{
             input.setAttribute("aria-checked", input.checked);
+            return input;
         });
     }
     static tickboxAriaCheckedAttribute(input) {

@@ -1,6 +1,6 @@
 .tickbox {
 	input[type='checkbox']:not(:disabled):not([role=switch]),
-	input[type='radio']:not(:disabled):not([role=switch]):checked {
+	input[type='radio']:not(:disabled):not([role=switch]) {
 		border-radius: 100px;
 		-webkit-appearance: none; // otherwise iOS will not render the box-shadow property
 

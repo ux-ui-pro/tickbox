@@ -16,8 +16,10 @@
 		pointer-events: auto;
 		appearance: none;
 		cursor: pointer;
+		background: none;
+		backface-visibility: hidden;
+		user-select: none;
 		-webkit-tap-highlight-color: transparent;
-		-webkit-user-select: none;
 
 		&[type='checkbox']:not([role=switch]),
 		&[type='radio']:not([role=switch]) {
