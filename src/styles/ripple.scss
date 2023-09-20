@@ -1,15 +1,15 @@
 .tickbox {
-	input[type='checkbox']:not(:disabled):not([role=switch]),
-	input[type='radio']:not(:disabled):not([role=switch]) {
+	input[type='checkbox']:not(:disabled):not([role=switch]):focus,
+	input[type='radio']:not(:disabled):not([role=switch]):focus {
 		border-radius: 100px;
 		-webkit-appearance: none; // otherwise iOS will not render the box-shadow property
 
 		&:checked {
-			animation: rippleChecked var(--tickbox-transition-duration) var(--tickbox-transition-timing);
+			animation: rippleChecked var(--tickbox-transition-duration) var(--tickbox-transition-timing) forwards;
 		}
 
 		&:not(:checked) {
-			animation: rippleUnchecked var(--tickbox-transition-duration) var(--tickbox-transition-timing);
+			animation: rippleUnchecked var(--tickbox-transition-duration) var(--tickbox-transition-timing) forwards;
 		}
 	}
 
