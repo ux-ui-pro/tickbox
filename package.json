@@ -1,6 +1,6 @@
 {
   "name": "tickbox",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "description": "Checkbox, radio, switch",
   "author": "ux-ui.pro",
   "license": "MIT",
@@ -52,6 +52,10 @@
     "component",
     "interface",
     "mobile",
-    "desktop"
+    "desktop",
+    "check",
+    "pretty",
+    "animation",
+    "animation"
   ]
 }
