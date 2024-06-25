@@ -1,38 +1,42 @@
-class $cf838c15c8b009ba$var$Tickbox {
-    static init() {
-        const tickboxElements = document.querySelectorAll(".tickbox");
-        if (tickboxElements.length === 0) return;
-        tickboxElements.forEach((element)=>{
-            const checkboxes = Array.from(element.querySelectorAll('input[type="checkbox"]'));
-            const radios = Array.from(element.querySelectorAll('input[type="radio"]'));
-            $cf838c15c8b009ba$var$Tickbox.addAriaCheckedAttribute([
+class $643fcf18b2d2e76f$var$Tickbox {
+    containerSelector;
+    tickboxContainers;
+    constructor(containerSelector = ".tickbox-container"){
+        this.containerSelector = containerSelector;
+        this.tickboxContainers = document.querySelectorAll(this.containerSelector);
+    }
+    init() {
+        if (!this.tickboxContainers.length) return;
+        this.tickboxContainers.forEach((container)=>{
+            const checkboxes = Array.from(container.querySelectorAll('input[type="checkbox"]'));
+            const radios = Array.from(container.querySelectorAll('input[type="radio"]'));
+            $643fcf18b2d2e76f$var$Tickbox.addAriaCheckedAttribute([
                 ...checkboxes,
                 ...radios
             ]);
-            element.addEventListener("click", (event)=>{
-                const { target: target } = event;
-                if (target.type === "checkbox" || target.type === "radio") $cf838c15c8b009ba$var$Tickbox.tickboxAriaCheckedAttribute(target);
+            container.addEventListener("click", (event)=>{
+                const target = event.target;
+                if (target.type === "checkbox" || target.type === "radio") $643fcf18b2d2e76f$var$Tickbox.tickboxAriaCheckedAttribute(target, container);
             });
         });
     }
     static addAriaCheckedAttribute(inputs) {
-        inputs.map((input)=>{
-            input.setAttribute("aria-checked", input.checked);
-            return input;
+        inputs.forEach((input)=>{
+            input.setAttribute("aria-checked", input.checked.toString());
         });
     }
-    static tickboxAriaCheckedAttribute(input) {
+    static tickboxAriaCheckedAttribute(input, container) {
         const groupName = input.getAttribute("name");
         if (groupName) {
-            const groupInputs = Array.from(document.querySelectorAll(`input[name="${groupName}"]`));
+            const groupInputs = container.querySelectorAll(`input[name="${groupName}"]`);
             groupInputs.forEach((groupInput)=>{
-                groupInput.setAttribute("aria-checked", groupInput === input);
+                groupInput.setAttribute("aria-checked", (groupInput === input).toString());
             });
-        } else input.setAttribute("aria-checked", input.checked);
+        } else input.setAttribute("aria-checked", input.checked.toString());
     }
 }
-var $cf838c15c8b009ba$export$2e2bcd8739ae039 = $cf838c15c8b009ba$var$Tickbox;
+var $643fcf18b2d2e76f$export$2e2bcd8739ae039 = $643fcf18b2d2e76f$var$Tickbox;
 
 
-export {$cf838c15c8b009ba$export$2e2bcd8739ae039 as default};
+export {$643fcf18b2d2e76f$export$2e2bcd8739ae039 as default};
 //# sourceMappingURL=index.module.js.map

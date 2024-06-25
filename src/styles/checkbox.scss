@@ -1,5 +1,5 @@
 .tickbox {
-	input[type='checkbox']:not([role=switch]) {
+	input[type='checkbox']:not([role="switch"]) {
 		&::before,
 		&::after {
 			--tickbox-checkbox: var(--tickbox-color-inactive);
@@ -19,7 +19,7 @@
 			background-repeat: no-repeat;
 			background-size: 18px 18px;
 			background-position: center center;
-			background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgZmlsbD0iI2ZmZiI+PHBhdGggZD0ibTcgMTMuNC00LTRMNC40IDggNyAxMC42IDEzLjYgNCAxNSA1LjRsLTggOFoiLz48L3N2Zz4=);
+			background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgZmlsbD0iI2ZmZiI+PHBhdGggZD0ibTcgMTMuNC00LTRMNC40IDggNyAxMC42IDEzLjYgNCAxNSA1LjRsLTggOFoiLz48L3N2Zz4=");
 			width: 20px; height: 20px;
 			opacity: 0;
 			transform: rotate(-25deg);

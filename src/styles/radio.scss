@@ -1,5 +1,5 @@
 .tickbox {
-	input[type='radio']:not([role=switch]) {
+	input[type='radio']:not([role="switch"]) {
 		&::before,
 		&::after {
 			--tickbox-radio: var(--tickbox-color-inactive);
