@@ -1,29 +1,36 @@
-class Tickbox {
+class TickBox {
   private containerSelector: string;
 
-  private tickboxContainers: NodeListOf<Element>;
+  private tickBoxContainers: NodeListOf<Element>;
 
   constructor(containerSelector: string = '.tickbox-container') {
     this.containerSelector = containerSelector;
-    this.tickboxContainers = document.querySelectorAll(this.containerSelector);
+    this.tickBoxContainers = document.querySelectorAll(this.containerSelector);
   }
 
   public init(): void {
-    if (!this.tickboxContainers.length) {
+    if (!this.tickBoxContainers.length) {
       return;
     }
 
-    this.tickboxContainers.forEach((container) => {
-      const checkboxes: HTMLInputElement[] = Array.from(container.querySelectorAll('input[type="checkbox"]'));
-      const radios: HTMLInputElement[] = Array.from(container.querySelectorAll('input[type="radio"]'));
+    this.tickBoxContainers.forEach((container) => {
+      const checkboxes: HTMLInputElement[] = Array.from(
+          container.querySelectorAll('input[type="checkbox"]')
+      );
+      const radios: HTMLInputElement[] = Array.from(
+          container.querySelectorAll('input[type="radio"]')
+      );
 
-      Tickbox.addAriaCheckedAttribute([...checkboxes, ...radios]);
+      TickBox.addAriaCheckedAttribute([...checkboxes, ...radios]);
 
       container.addEventListener('click', (event) => {
-        const target = event.target as HTMLInputElement;
+        const target = event.target as Element;
 
-        if (target.type === 'checkbox' || target.type === 'radio') {
-          Tickbox.tickboxAriaCheckedAttribute(target, container);
+        if (
+            target instanceof HTMLInputElement &&
+            (target.type === 'checkbox' || target.type === 'radio')
+        ) {
+          TickBox.tickBoxAriaCheckedAttribute(target, container);
         }
       });
     });
@@ -35,14 +42,19 @@ class Tickbox {
     });
   }
 
-  private static tickboxAriaCheckedAttribute(input: HTMLInputElement, container: Element): void {
+  private static tickBoxAriaCheckedAttribute(
+      input: HTMLInputElement,
+      container: Element
+  ): void {
     const groupName = input.getAttribute('name');
 
     if (groupName) {
-      const groupInputs = container.querySelectorAll(`input[name="${groupName}"]`) as NodeListOf<HTMLInputElement>;
+      const groupInputs = container.querySelectorAll(
+          `input[name="${groupName}"]`
+      ) as NodeListOf<HTMLInputElement>;
 
       groupInputs.forEach((groupInput) => {
-        groupInput.setAttribute('aria-checked', (groupInput === input).toString());
+        groupInput.setAttribute('aria-checked', groupInput.checked.toString());
       });
     } else {
       input.setAttribute('aria-checked', input.checked.toString());
@@ -50,4 +62,4 @@ class Tickbox {
   }
 }
 
-export default Tickbox;
+export default TickBox;

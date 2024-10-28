@@ -1,5 +1,5 @@
 <br>
-<p align="center"><strong>stickbox</strong></p>
+<p align="center"><strong>tickbox</strong></p>
 
 <div align="center">
 
